@@ -1,0 +1,275 @@
+body {
+    color: #330066;
+    background: #FFFFFF;
+    font-family: Verdana, Arial;
+    font-size: 12pt;
+}
+
+.ortala {
+    text-align: center;
+}
+
+.logohiza {
+    width: auto
+}
+
+p {
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+}
+
+.klavyebar {
+    clear: both;
+}
+
+
+.altbar {
+    clear: both;
+    height: 4em;
+}
+
+.klavye {
+    clear: both;
+    height: 1em;
+}
+
+.alt {
+    clear: both;
+    height: 2em;
+}
+
+a {
+    color: #330066;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #DD0000;
+    text-decoration: none;
+}
+
+.buton {
+    outline: none;
+    padding: 8px 16px;
+    margin: 10px;
+    border-radius: 4px;
+    font-size: 18px;
+    background: #CC0033;
+    color: #fff;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.buton:hover {
+    border-color: #CC0033;
+    background-color: #fff;
+    color: #CC0033;
+}
+
+textarea {
+    font-family: Arial;
+    color: #5B5B5B;
+    font-size: 1em;
+}
+
+input {
+    font-family: Arial;
+    color: #5B5B5B;
+    font-size: 1em;
+}
+
+select {
+    color: #330066;
+}
+
+a.img:hover {
+    background-color: #F4F400;
+}
+
+
+.panohiza {
+    position: absolute;
+    left: 2%;
+}
+
+.form {
+    margin-left: 12%;
+}
+
+.form p {
+    margin: 0.3em 0 0.3em 0;
+}
+
+.orta {
+    text-align: center;
+}
+
+.img-0 {
+    border: 0;
+    width: 60px
+}
+
+
+.harf {
+    display: inline-block;
+    padding-bottom: 1em;
+    text-align: center;
+    font-family: Arial;
+    color: black;
+}
+
+.harf p {
+    margin: 0.15em 0 0.15em 0;
+}
+
+
+ul li {
+    line-height: 20pt;
+}
+
+.arabe {
+    font-size: 1.2em;
+    color: #0000CC;
+    font-family: Times New Roman, Arial;
+    direction: rtl;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+.altbaryazi {
+    font-family: Times New Roman, Arial;
+    font-size: 1.2em;
+    color: #0000FF;
+}
+
+.nav {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    display: inline-block;
+    padding: 1em 1.5em 1em 1.5em;
+}
+
+a.altnav {
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: block;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    background: #FFFFFF;
+    outline: none;
+}
+
+a.altnav:hover {
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: block;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    background: #CC0033;
+    cursor: pointer;
+    outline: none;
+}
+
+footer {  
+  position:absolute;
+  right: 0;
+  left :0;
+  padding : ;
+  background : #CC0033;  
+}
+
+footer p {
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+
+.bt,
+.bt:hover,
+.bt:visited {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #CC0033;
+    font-family: Times New Roman, Arial;
+}
+
+.pano {
+    height: 100%;
+    width: 80%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+    padding-top: 6px;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: #fff;
+    color: black;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-color: #CC0033;
+    font-family: Times New Roman, Arial;
+}
+
+.eskikarakterler {
+    color: #666666;
+    font-family: Times New Roman, Arial;
+    font-size: 1.2em;
+}
+
+.altbarbaslik {
+    margin: 0.6em 2% 0.6em 6%;
+    color: black;
+}
+
+@media screen and (max-width:960px) {
+    select {
+        max-width: 90%;
+    }
+
+    img {
+        border: 0;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .altbarbaslik {
+        margin: 1em 2% 0.6em 6%;
+    }
+
+    .form {
+        margin-left: 10%;
+    }
+
+
+    @media screen and (max-width:720px) {
+        .panohiza {
+            position: absolute;
+            left: 0%;
+        }
+
+    }

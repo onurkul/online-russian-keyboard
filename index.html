@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sanal Rusça Klavye</title>
+    <meta
+      name="description"
+      content="Bu araç ile latin harfleri ile yazacağınız her kelime kiril harfleri ile yazılmış kelimeye dönüştürülmektedir."
+    />
+    <meta name="author" content="Onur KUL" />
+    <meta name="publisher" content="Onur KUL" />
+    <meta name="robots" content="all" />
+    <meta name="revisit-after" content="1 Days" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Onur KUL" />
+    <meta
+      property="og:image"
+      content="https://onurkul.com.tr/uploads/logo/logo_61fda0d03b48f0-92709354-65066295.png"
+    />
+    <meta property="og:image:width" content="180" />
+    <meta property="og:image:height" content="50" />
+    <meta property="og:type" content="website/" />
+    <meta property="og:title" content="Sanal Rusça Klavye | Onur KUL" />
+    <meta
+      property="og:description"
+      content="Bu araç ile latin harfleri ile yazacağınız her kelime kiril harfleri ile yazılmış kelimeye dönüştürülmektedir."
+    />
+    <meta
+      property="og:url"
+      content="https://onurkul.com.tr/araclar/rusca-klavye/"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="Onur KUL" />
+    <meta name="twitter:title" content="Sanal Rusça Klavye | Onur KUL" />
+    <meta
+      name="twitter:description"
+      content="Bu araç ile latin harfleri ile yazacağınız her kelime kiril harfleri ile yazılmış kelimeye dönüştürülmektedir."
+    />
+    <meta
+      name="twitter:image"
+      content="https://onurkul.com.tr/uploads/logo/logo_61fda0d03b48f0-92709354-65066295.png"
+    />
+    <link rel="canonical" href="https://onurkul.com.tr/araclar/rusca-klavye/" />
+    <link
+      rel="alternate"
+      href="https://onurkul.com.tr/araclar/rusca-klavye/"
+      hreflang="tr_TR"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="https://onurkul.com.tr/uploads/logo/favicon_62096e9aa3b474-30316417-17601085.png"
+    />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/temel.js"></script>
+    <script src="js/rusca.js"></script>
+    <script src="js/pano.js"></script>
+    <script src="js/kaydet.js"></script>
+  </head>
+
+  <body onload="conversion.saisie.focus()">
+    <div class="logohiza">
+      <a href="index.html"><img src="img/logo.png" class="logo" /></a>
+    </div>
+    <br />
+    <br />
+    <div class="orta">
+      <br />
+      <form name="conversion">
+        <div class="panohiza">
+          <br />
+        </div>
+        <textarea
+          name="saisie"
+          id="bar"
+          onkeyup="transcrire()"
+          rows="4"
+          class="pano"
+        ></textarea>
+        <br />
+        <br />
+        <input
+          type="button"
+          class="buton"
+          title="Temizle"
+          onclick="reset();conversion.saisie.focus()"
+          value="Temizle"
+        />
+
+        <input
+          type="button"
+          class="buton"
+          data-clipboard-action="copy"
+          data-clipboard-target="#bar"
+          value="Kopyala"
+        />
+        <script>
+          var clipboard = new Clipboard(".buton");
+          clipboard.on("success", function (e) {
+            console.log(e);
+          });
+          clipboard.on("error", function (e) {
+            console.log(e);
+          });
+        </script>
+        <input type="button" class="buton" onclick="save()" value="Kaydet" />
+        <input
+          type="button"
+          onclick="conversion.saisie.rows=40;conversion.saisie.focus()"
+          value="Panoyu Genişlet"
+          class="buton"
+        />
+        <input
+          type="button"
+          onclick="conversion.saisie.rows=4;conversion.saisie.focus()"
+          value="Panoyu Daralt"
+          class="buton"
+        />
+        <div class="klavye"></div>
+        <div class="harf">
+          A
+          <p>
+            <input type="button" class="bt" onclick="alpha('А')" value="А" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('а')" value="а" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          B
+          <p>
+            <input type="button" class="bt" onclick="alpha('Б')" value="Б" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('б')" value="б" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          V
+          <p>
+            <input type="button" class="bt" onclick="alpha('В')" value="В" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('в')" value="в" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          G
+          <p>
+            <input type="button" class="bt" onclick="alpha('Г')" value="Г" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('г')" value="г" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          D
+          <p>
+            <input type="button" class="bt" onclick="alpha('Д')" value="Д" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('д')" value="д" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          E/YE
+          <p>
+            <input type="button" class="bt" onclick="alpha('Е')" value="Е" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('е')" value="е" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          O/YO
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ё')" value="Ё" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ё')" value="ё" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          J
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ж')" value="Ж" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ж')" value="ж" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          Z
+          <p>
+            <input type="button" class="bt" onclick="alpha('З')" value="З" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('з')" value="з" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          İ
+          <p>
+            <input type="button" class="bt" onclick="alpha('И')" value="И" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('и')" value="и" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          Y
+          <p>
+            <input type="button" class="bt" onclick="alpha('Й')" value="Й" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('й')" value="й" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          K
+          <p>
+            <input type="button" class="bt" onclick="alpha('К')" value="К" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('к')" value="к" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          L
+          <p>
+            <input type="button" class="bt" onclick="alpha('Л')" value="Л" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('л')" value="л" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          M
+          <p>
+            <input type="button" class="bt" onclick="alpha('М')" value="М" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('м')" value="м" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          N
+          <p>
+            <input type="button" class="bt" onclick="alpha('Н')" value="Н" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('н')" value="н" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          O
+          <p>
+            <input type="button" class="bt" onclick="alpha('О')" value="О" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('о')" value="о" />
+          </p>
+          <p></p>
+        </div>
+        <div class="klavyebar"></div>
+        <div class="harf">
+          P
+          <p>
+            <input type="button" class="bt" onclick="alpha('П')" value="П" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('п')" value="п" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          R
+          <p>
+            <input type="button" class="bt" onclick="alpha('Р')" value="Р" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('р')" value="р" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          S
+          <p>
+            <input type="button" class="bt" onclick="alpha('С')" value="С" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('с')" value="с" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          T
+          <p>
+            <input type="button" class="bt" onclick="alpha('Т')" value="Т" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('т')" value="т" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          U
+          <p>
+            <input type="button" class="bt" onclick="alpha('У')" value="У" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('у')" value="у" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          F
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ф')" value="Ф" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ф')" value="ф" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          H
+          <p>
+            <input type="button" class="bt" onclick="alpha('Х')" value="Х" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('х')" value="х" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          TS
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ц')" value="Ц" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ц')" value="ц" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          Ç
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ч')" value="Ч" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ч')" value="ч" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          Ş
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ш')" value="Ш" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ш')" value="ш" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          SÇ
+          <p>
+            <input type="button" class="bt" onclick="alpha('Щ')" value="Щ" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('щ')" value="щ" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          ʺ
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ъ')" value="Ъ" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ъ')" value="ъ" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          I
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ы')" value="Ы" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ы')" value="ы" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          ʹ
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ь')" value="Ь" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ь')" value="ь" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          E
+          <p>
+            <input type="button" class="bt" onclick="alpha('Э')" value="Э" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('э')" value="э" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          U/YU
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ю')" value="Ю" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ю')" value="ю" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          <br />YA
+          <p>
+            <input type="button" class="bt" onclick="alpha('Я')" value="Я" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('я')" value="я" />
+          </p>
+          <p></p>
+        </div>
+
+        <div class="klavyebar"></div>
+        <div class="harf">
+          <input type="button" class="bt" onclick="alpha('«')" value="«" />
+        </div>
+        <div class="harf">
+          <input type="button" class="bt" onclick="alpha('»')" value="»" />
+        </div>
+        <div class="harf">
+          <input type="button" class="bt" onclick="alpha('„')" value="„" />
+        </div>
+        <div class="harf">
+          <input type="button" class="bt" onclick="alpha('“')" value="“" />
+        </div>
+        <div class="harf">
+          <input type="button" class="bt" onclick="alpha('—')" value="—" />
+        </div>
+        <div class="harf">
+          <input type="button" class="bt" onclick="alpha('…')" value="…" />
+        </div>
+        <div class="harf">
+          <input
+            type="button"
+            class="bt"
+            onclick="alpha('́')"
+            value="&nbsp;́"
+            title="accent"
+          />
+        </div>
+
+        <div class="klavyebar"></div>
+        <p class="eskiruscabaslik" style="color: black">
+          Eski Rusça Karakterler
+        </p>
+        <div class="harf">
+          <span class="eskikarakterler">и</span>
+          <p>
+            <input type="button" class="bt" onclick="alpha('і')" value="і" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('І')" value="І" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          <span class="eskikarakterler">е</span>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ѣ')" value="ѣ" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ѣ')" value="Ѣ" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          <span class="eskikarakterler">ф</span>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ѳ')" value="ѳ" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ѳ')" value="Ѳ" />
+          </p>
+          <p></p>
+        </div>
+        <div class="harf">
+          <span class="eskikarakterler">и</span>
+          <p>
+            <input type="button" class="bt" onclick="alpha('ѵ')" value="ѵ" />
+          </p>
+          <p>
+            <input type="button" class="bt" onclick="alpha('Ѵ')" value="Ѵ" />
+          </p>
+          <p></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="altbar"></div>
+    <div class="altbarbaslik">
+      <b>Kısayollar</b>
+      <ul>
+        <li>
+          <span class="altbaryazi">e</span> harfi için
+          <b style="color: #cc0033">e=</b> /
+          <span class="altbaryazi">ё</span> harfi için ise
+          <b style="color: #cc0033">e==</b> kısayollarını kullanabilirsiniz.
+        </li>
+        <li>
+          <span class="altbaryazi">ц</span> harfi için
+          <b style="color: #cc0033">t= </b>kısayolunu kullanabilirsiniz.
+        </li>
+        <li>
+          <span class="altbaryazi">щ</span> harfi için
+          <b style="color: #cc0033">s= </b>kısayolunu kullanabilirsiniz.
+        </li>
+        <li>
+          <span class="altbaryazi">ъ</span> harfi için
+          <b style="color: #cc0033">"</b> /
+          <span class="altbaryazi">ь</span> harfi için ise
+          <b style="color: #cc0033">"=</b> kısayollarını kullanabilirsiniz.
+        </li>
+        <li>
+          <span class="altbaryazi">ю</span> harfi için
+          <b style="color: #cc0033">u=</b> /
+          <span class="altbaryazi">я</span> harfi için ise
+          <b style="color: #cc0033">a=</b> kısayollarını kullanabilirsiniz.
+        </li>
+      </ul>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var e = document.getElementById("yapimda");
+
+        e.addEventListener(
+          "click",
+          function () {
+            alert(
+              "Bu bölüm yapım aşamasındadır. Lütfen daha sonra tekrar deneyin."
+            );
+          },
+          false
+        );
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var e = document.getElementById("yapimda2");
+
+        e.addEventListener(
+          "click",
+          function () {
+            alert(
+              "Bu bölüm yapım aşamasındadır. Lütfen daha sonra tekrar deneyin."
+            );
+          },
+          false
+        );
+      });
+    </script>
+    <div class="altbar"></div>
+    <ul class="nav">
+      <li>
+        <a href="https://onurkul.com.tr/araclar" title="Araçlar"
+          ><img src="img/araclar.png" class="img-0" alt="Araçlar"
+        /></a>
+        <a class="altnav" href="https://onurkul.com.tr/araclar">Araçlar</a>
+      </li>
+      <li>
+        <a href="https://onurkul.com.tr/" title="Ana Sayfa"
+          ><img src="img/anasayfa.png" class="img-0" alt="Ana Sayfa"
+        /></a>
+        <a class="altnav" href="https://onurkul.com.tr/">Ana Sayfa</a>
+      </li>
+      <li>
+        <a id="yapimda" href="#" title="Rusça Sözlük"
+          ><img src="img/sozluk.png" class="img-0" alt="Rusça Sözlük"
+        /></a>
+        <a id="yapimda2" class="altnav" href="#">Rusça Sözlük</a>
+      </li>
+    </ul>
+
+    <br />
+    <footer>
+      <p>Telif Hakkı © 2021 Onur KUL - Tüm Hakları Saklıdır</p>
+    </footer>
+  </body>
+</html>
